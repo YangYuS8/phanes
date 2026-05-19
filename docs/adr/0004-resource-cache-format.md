@@ -57,5 +57,5 @@ Runtime accepts only completed and verified cache output. Missing or invalid cac
 
 ## Related
 
-- [Builder/cache contract](../contracts/builder-cache.md)
-- [SQLite schema contract](../contracts/sqlite-schema.md)
+- [Builder/cache contract](../contracts/builder-cache)
+- [SQLite schema contract](../contracts/sqlite-schema)

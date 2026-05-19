@@ -1,0 +1,37 @@
+stages:
+  - test
+  - deploy
+
+go:test:
+  stage: test
+  image: golang:1.22
+  script:
+    - go test ./...
+
+proto:lint:
+  stage: test
+  image: node:20
+  script:
+    - npm exec --yes --package=@bufbuild/buf -- buf lint
+
+docs:build:
+  stage: test
+  image: node:20
+  script:
+    - npm ci
+    - npm run build
+    - npm run build:en
+    - npm run build:zh
+
+pages:
+  stage: deploy
+  image: node:20
+  script:
+    - npm ci
+    - npm run build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

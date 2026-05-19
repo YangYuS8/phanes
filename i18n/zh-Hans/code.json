@@ -1,0 +1,26 @@
+{
+  "theme.navbar.item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "theme.footer.title.Contracts": {
+    "message": "契约",
+    "description": "Footer title Contracts"
+  },
+  "theme.footer.title.Project": {
+    "message": "项目",
+    "description": "Footer title Project"
+  },
+  "theme.footer.link.Module Boundaries": {
+    "message": "模块边界",
+    "description": "Footer link Module Boundaries"
+  },
+  "theme.footer.link.Compliance Checklist": {
+    "message": "合规检查清单",
+    "description": "Footer link Compliance Checklist"
+  },
+  "theme.footer.link.License": {
+    "message": "许可证",
+    "description": "Footer link License"
+  }
+}

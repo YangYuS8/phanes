@@ -1,5 +1,7 @@
 # Phanes
 
+中文说明见：[README.zh-CN.md](README.zh-CN.md).
+
 Phanes is a local-first offline runtime, resource-cache builder, and launcher framework for sandbox research.
 
 The intended flow is:
@@ -46,3 +48,23 @@ Preferred stack:
 ## Current status
 
 The project is in contract-design phase. Implementation should begin only after the relevant ADRs, examples/fixtures, and validation checks are in place.
+
+## Documentation site
+
+Project documentation is intended to be managed with Docusaurus and published to GitLab Pages through GitLab CI/CD. The checked-in contract docs under `docs/` are the source for that site.
+
+Local docs commands:
+
+```bash
+npm install
+npm run start
+npm run build
+npm run build:en
+npm run build:zh
+```
+
+The Docusaurus site provides English and Simplified Chinese documentation. English source docs live under `docs/`; Chinese localized docs live under `i18n/zh-Hans/docusaurus-plugin-content-docs/current/`.
+
+## License
+
+Phanes is licensed under the Apache License, Version 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).

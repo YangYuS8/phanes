@@ -37,5 +37,5 @@ Use generated Go types at module boundaries. JSON is allowed for human-editable 
 
 ## Related
 
-- [Protobuf contracts](../contracts/protobuf.md)
-- [Go interface contracts](../contracts/go-interfaces.md)
+- [Protobuf contracts](../contracts/protobuf)
+- [Go interface contracts](../contracts/go-interfaces)

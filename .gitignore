@@ -1,0 +1,45 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Go
+/bin/
+/dist/
+*.test
+*.out
+coverage.out
+
+# Generated protobuf output
+/gen/
+
+# Node/Docusaurus
+/node_modules/
+/build/
+/.docusaurus/
+.npm/
+
+# GitLab Pages artifact
+/public/
+
+# Local Phanes workspace/runtime state
+/.phanes/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

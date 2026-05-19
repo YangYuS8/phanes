@@ -41,5 +41,5 @@ Phanes will be designed as a new project with these mandatory boundaries:
 
 ## Related
 
-- [Module boundaries](../contracts/module-boundaries.md)
-- [Compliance checklist](../contracts/compliance-checklist.md)
+- [Module boundaries](../contracts/module-boundaries)
+- [Compliance checklist](../contracts/compliance-checklist)

@@ -50,5 +50,5 @@ The initial launcher/runtime communication model is child-process supervision pl
 
 ## Related
 
-- [Runtime HTTP API](../contracts/runtime-http-api.md)
-- [CLI contract](../contracts/cli.md)
+- [Runtime HTTP API](../contracts/runtime-http-api)
+- [CLI contract](../contracts/cli)
