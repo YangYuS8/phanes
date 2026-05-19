@@ -65,6 +65,10 @@ npm run build:zh
 
 The Docusaurus site provides English and Simplified Chinese documentation. English source docs live under `docs/`; Chinese localized docs live under `i18n/zh-Hans/docusaurus-plugin-content-docs/current/`.
 
+## Releases
+
+Tagged GitLab CI/CD pipelines build Windows-focused release artifacts for `windows/amd64` and `windows/arm64`, package them as `.zip` files, generate `SHA256SUMS.txt`, and create a GitLab Release.
+
 ## License
 
 Phanes is licensed under the Apache License, Version 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).

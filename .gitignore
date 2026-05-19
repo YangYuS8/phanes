@@ -19,9 +19,6 @@ Thumbs.db
 *.out
 coverage.out
 
-# Generated protobuf output
-/gen/
-
 # Node/Docusaurus
 /node_modules/
 /build/

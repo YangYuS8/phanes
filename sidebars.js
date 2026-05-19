@@ -23,6 +23,7 @@ const sidebars = {
         'contracts/runtime-http-api',
         'contracts/builder-cache',
         'contracts/documentation-site',
+        'contracts/release',
         'contracts/compliance-checklist',
       ],
     },

@@ -63,6 +63,10 @@ npm run build:en
 npm run build:zh
 ```
 
+## 发布
+
+带 tag 的 GitLab CI/CD pipeline 会优先构建 Windows 发布产物，包括 `windows/amd64` 和 `windows/arm64`，打包为 `.zip`，生成 `SHA256SUMS.txt`，并创建 GitLab Release。
+
 ## 许可证
 
 Phanes 使用 Apache License, Version 2.0。详见 [`LICENSE`](LICENSE) 和 [`NOTICE`](NOTICE)。
