@@ -1,0 +1,12 @@
+{
+  "output_dir": "./.phanes/cache/embedded-minimal",
+  "input_sources": [
+    {
+      "source_id": "embedded-minimal",
+      "kind": "SOURCE_KIND_EMBEDDED_MINIMAL",
+      "local_path": ""
+    }
+  ],
+  "mode": "BUILD_MODE_EMBEDDED_MINIMAL",
+  "allow_external_import": false
+}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package phanes.builder.v1;
+
+import "phanes/cache/v1/cache.proto";
+import "phanes/common/v1/common.proto";
+
+message BuildRequest {
+  string output_dir = 1;
+  repeated InputSource input_sources = 2;
+  BuildMode mode = 3;
+  bool allow_external_import = 4;
+}
+
+message InputSource {
+  string source_id = 1;
+  phanes.cache.v1.SourceKind kind = 2;
+  string local_path = 3;
+}
+
+enum BuildMode {
+  BUILD_MODE_UNSPECIFIED = 0;
+  BUILD_MODE_EMBEDDED_MINIMAL = 1;
+  BUILD_MODE_LOCAL_CACHE = 2;
+  BUILD_MODE_VERIFY_ONLY = 3;
+}
+
+message BuildResult {
+  bool success = 1;
+  phanes.cache.v1.CacheManifest manifest = 2;
+  repeated phanes.common.v1.Problem problems = 3;
+}
+
+message VerifyCacheRequest {
+  string cache_dir = 1;
+  bool deep_hash_check = 2;
+}
+
+message VerifyCacheResult {
+  bool valid = 1;
+  phanes.cache.v1.CacheManifest manifest = 2;
+  repeated phanes.common.v1.Problem problems = 3;
+}
+
+message BuildProgress {
+  string phase = 1;
+  uint32 percent = 2;
+  string current_item = 3;
+  repeated phanes.common.v1.Problem problems = 4;
+}

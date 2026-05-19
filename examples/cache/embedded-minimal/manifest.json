@@ -1,0 +1,43 @@
+{
+  "cache_id": "embedded-minimal-v1",
+  "schema_version": {
+    "major": 0,
+    "minor": 1,
+    "patch": 0,
+    "prerelease": "contract-fixture"
+  },
+  "game_region": "fixture",
+  "game_version": "fixture",
+  "sources": [
+    {
+      "source_id": "embedded-minimal",
+      "kind": "SOURCE_KIND_EMBEDDED_MINIMAL",
+      "display_name": "Embedded minimal contract fixture",
+      "local_path": "",
+      "digest": {
+        "algorithm": "sha256",
+        "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "cache-sqlite",
+      "kind": "ARTIFACT_KIND_SQLITE_DB",
+      "relative_path": "cache.sqlite",
+      "size_bytes": 0,
+      "digest": {
+        "algorithm": "sha256",
+        "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "indexes": [
+    {
+      "name": "resource_index",
+      "version": "0.1.0",
+      "record_count": 0
+    }
+  ],
+  "created_at": "1970-01-01T00:00:00Z"
+}

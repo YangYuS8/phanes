@@ -1,0 +1,14 @@
+{
+  "workspace_dir": "./.phanes",
+  "runtime": {
+    "bind_host": "127.0.0.1",
+    "http_port": 0,
+    "mode": "offline-local"
+  },
+  "cache": {
+    "dir": "./.phanes/cache/current"
+  },
+  "save": {
+    "db_path": "./.phanes/save/save.sqlite"
+  }
+}

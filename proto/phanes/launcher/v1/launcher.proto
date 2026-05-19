@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package phanes.launcher.v1;
+
+import "google/protobuf/timestamp.proto";
+import "phanes/common/v1/common.proto";
+import "phanes/runtime/v1/runtime.proto";
+
+message LauncherConfig {
+  string runtime_binary_path = 1;
+  string builder_binary_path = 2;
+  string workspace_dir = 3;
+  string cache_dir = 4;
+  string save_db_path = 5;
+  phanes.runtime.v1.RuntimeConfig runtime = 6;
+}
+
+message RuntimeProcessSpec {
+  string executable = 1;
+  repeated string args = 2;
+  map<string, string> env = 3;
+  string working_dir = 4;
+}
+
+message RuntimeProcessStatus {
+  uint32 pid = 1;
+  phanes.runtime.v1.RuntimeStatus runtime_status = 2;
+  ProcessState process_state = 3;
+}
+
+enum ProcessState {
+  PROCESS_STATE_UNSPECIFIED = 0;
+  PROCESS_STATE_NOT_STARTED = 1;
+  PROCESS_STATE_STARTING = 2;
+  PROCESS_STATE_RUNNING = 3;
+  PROCESS_STATE_EXITED = 4;
+  PROCESS_STATE_FAILED = 5;
+}
+
+message LogEvent {
+  google.protobuf.Timestamp time = 1;
+  string source = 2;
+  string level = 3;
+  string message = 4;
+  repeated phanes.common.v1.Problem problems = 5;
+}

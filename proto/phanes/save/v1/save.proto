@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package phanes.save.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Profile {
+  string profile_id = 1;
+  string display_name = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+
+message SaveMetadata {
+  string save_id = 1;
+  string profile_id = 2;
+  uint32 schema_version = 3;
+  google.protobuf.Timestamp last_played_at = 4;
+}

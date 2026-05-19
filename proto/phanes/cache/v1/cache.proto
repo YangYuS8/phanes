@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package phanes.cache.v1;
+
+import "google/protobuf/timestamp.proto";
+import "phanes/common/v1/common.proto";
+
+message CacheManifest {
+  string cache_id = 1;
+  phanes.common.v1.Version schema_version = 2;
+  string game_region = 3;
+  string game_version = 4;
+  repeated CacheSource sources = 5;
+  repeated CacheArtifact artifacts = 6;
+  repeated CacheIndex indexes = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message CacheSource {
+  string source_id = 1;
+  SourceKind kind = 2;
+  string display_name = 3;
+  string local_path = 4;
+  phanes.common.v1.FileDigest digest = 5;
+}
+
+enum SourceKind {
+  SOURCE_KIND_UNSPECIFIED = 0;
+  SOURCE_KIND_LOCAL_INSTALL = 1;
+  SOURCE_KIND_LOCAL_ARCHIVE = 2;
+  SOURCE_KIND_EMBEDDED_MINIMAL = 3;
+  SOURCE_KIND_EXTERNAL_IMPORT = 4;
+}
+
+message CacheArtifact {
+  string artifact_id = 1;
+  ArtifactKind kind = 2;
+  string relative_path = 3;
+  uint64 size_bytes = 4;
+  phanes.common.v1.FileDigest digest = 5;
+}
+
+enum ArtifactKind {
+  ARTIFACT_KIND_UNSPECIFIED = 0;
+  ARTIFACT_KIND_SQLITE_DB = 1;
+  ARTIFACT_KIND_BLOB_PACK = 2;
+  ARTIFACT_KIND_MANIFEST = 3;
+  ARTIFACT_KIND_INDEX = 4;
+}
+
+message CacheIndex {
+  string name = 1;
+  string version = 2;
+  uint64 record_count = 3;
+}

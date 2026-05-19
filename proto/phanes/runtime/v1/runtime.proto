@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package phanes.runtime.v1;
+
+import "google/protobuf/timestamp.proto";
+import "phanes/common/v1/common.proto";
+
+message RuntimeConfig {
+  string bind_host = 1;
+  uint32 http_port = 2;
+  string cache_dir = 3;
+  string save_db_path = 4;
+  string log_dir = 5;
+  RuntimeMode mode = 6;
+}
+
+enum RuntimeMode {
+  RUNTIME_MODE_UNSPECIFIED = 0;
+  RUNTIME_MODE_OFFLINE_LOCAL = 1;
+  RUNTIME_MODE_DIAGNOSTIC = 2;
+}
+
+message RuntimeStatus {
+  RuntimeState state = 1;
+  string bind_host = 2;
+  uint32 http_port = 3;
+  string cache_id = 4;
+  string active_profile_id = 5;
+  repeated phanes.common.v1.Problem problems = 6;
+  google.protobuf.Timestamp started_at = 7;
+}
+
+enum RuntimeState {
+  RUNTIME_STATE_UNSPECIFIED = 0;
+  RUNTIME_STATE_STARTING = 1;
+  RUNTIME_STATE_READY = 2;
+  RUNTIME_STATE_DEGRADED = 3;
+  RUNTIME_STATE_STOPPING = 4;
+  RUNTIME_STATE_STOPPED = 5;
+  RUNTIME_STATE_FAILED = 6;
+}
+
+message StartSessionRequest {
+  string profile_id = 1;
+}
+
+message StartSessionResult {
+  string session_id = 1;
+  google.protobuf.Timestamp started_at = 2;
+}
+
+message StopSessionRequest {
+  string session_id = 1;
+  string reason = 2;
+}
+
+message StopSessionResult {
+  bool accepted = 1;
+}
+
+message StopRuntimeRequest {
+  string reason = 1;
+}
+
+message StopRuntimeResult {
+  bool accepted = 1;
+}
+
+message HealthzResponse {
+  bool ok = 1;
+  RuntimeState state = 2;
+}
+
+message DiagnosticsResponse {
+  repeated phanes.common.v1.Problem problems = 1;
+}

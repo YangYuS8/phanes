@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package phanes.common.v1;
+
+message Version {
+  uint32 major = 1;
+  uint32 minor = 2;
+  uint32 patch = 3;
+  string prerelease = 4;
+}
+
+message FileDigest {
+  string algorithm = 1;
+  string hex = 2;
+}
+
+message LocalPath {
+  string path = 1;
+}
+
+message Problem {
+  string code = 1;
+  string message = 2;
+  Severity severity = 3;
+  repeated string remediation = 4;
+}
+
+enum Severity {
+  SEVERITY_UNSPECIFIED = 0;
+  SEVERITY_INFO = 1;
+  SEVERITY_WARNING = 2;
+  SEVERITY_ERROR = 3;
+  SEVERITY_FATAL = 4;
+}
