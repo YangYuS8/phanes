@@ -29,6 +29,7 @@ Phanes is **not** a Grasscutter fork. Grasscutter, Cultivation, and GC-Resources
 Before implementation, cross-module behavior is defined through versioned contracts:
 
 - ADRs in [`docs/adr/`](docs/adr/)
+- v1 roadmap in [`docs/roadmap/v1.md`](docs/roadmap/v1.md)
 - module boundaries in [`docs/contracts/module-boundaries.md`](docs/contracts/module-boundaries.md)
 - protobuf package plan in [`docs/contracts/protobuf.md`](docs/contracts/protobuf.md)
 - Go interface contracts in [`docs/contracts/go-interfaces.md`](docs/contracts/go-interfaces.md)

@@ -29,6 +29,7 @@ Phanes **不是** Grasscutter fork。Grasscutter、Cultivation 和 GC-Resources 
 实现前，跨模块行为先通过版本化契约定义：
 
 - ADR：[`docs/adr/`](docs/adr/)
+- v1 路线图：[`docs/roadmap/v1.md`](docs/roadmap/v1.md)
 - 模块边界：[`docs/contracts/module-boundaries.md`](docs/contracts/module-boundaries.md)
 - Protobuf 契约：[`docs/contracts/protobuf.md`](docs/contracts/protobuf.md)
 - Go interface 契约：[`docs/contracts/go-interfaces.md`](docs/contracts/go-interfaces.md)

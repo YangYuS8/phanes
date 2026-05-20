@@ -7,6 +7,10 @@
     "message": "架构决策记录",
     "description": "The label for category ADRs in sidebar docs"
   },
+  "sidebar.docs.category.Roadmap": {
+    "message": "路线图",
+    "description": "The label for category Roadmap in sidebar docs"
+  },
   "sidebar.docs.category.Contracts": {
     "message": "契约",
     "description": "The label for category Contracts in sidebar docs"

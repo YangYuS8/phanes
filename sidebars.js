@@ -3,6 +3,11 @@ const sidebars = {
     'intro',
     {
       type: 'category',
+      label: 'Roadmap',
+      items: ['roadmap/v1'],
+    },
+    {
+      type: 'category',
       label: 'ADRs',
       items: [
         'adr/scope-and-boundaries',

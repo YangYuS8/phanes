@@ -11,6 +11,7 @@ Phanes 是一个本地优先的离线 runtime、资源缓存构建器与启动�
 ## 从这里开始
 
 - [范围与边界](adr/scope-and-boundaries)
+- [v1 路线图](roadmap/v1)
 - [模块边界](contracts/module-boundaries)
 - [Protobuf 契约](contracts/protobuf)
 - [合规检查清单](contracts/compliance-checklist)

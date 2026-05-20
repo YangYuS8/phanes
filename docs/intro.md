@@ -11,6 +11,7 @@ This documentation site is the canonical browsable view of the contract-first de
 ## Start here
 
 - [Scope and boundaries](adr/scope-and-boundaries)
+- [v1 roadmap](roadmap/v1)
 - [Module boundaries](contracts/module-boundaries)
 - [Protobuf contracts](contracts/protobuf)
 - [Compliance checklist](contracts/compliance-checklist)
