@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"errors"
 	"flag"
 	"fmt"
@@ -9,6 +10,7 @@ import (
 	"github.com/YangYuS8/phanes/internal/builder"
 	"github.com/YangYuS8/phanes/internal/config"
 	"github.com/YangYuS8/phanes/internal/contracts"
+	runtimehttp "github.com/YangYuS8/phanes/internal/runtime"
 )
 
 var (
@@ -68,7 +70,13 @@ func runtimeCommand(args []string) error {
 		if err != nil {
 			return err
 		}
-		return notImplemented(fmt.Sprintf("runtime start validated bind=%s port=%d cache=%s save=%s", cfg.Runtime.BindHost, cfg.Runtime.HTTPPort, cfg.Cache.Dir, cfg.Save.DBPath))
+		server, err := runtimehttp.NewServer(*cfg, runtimehttp.Options{OnReady: func(server *runtimehttp.Server) {
+			fmt.Fprintf(os.Stderr, "runtime ready: %s\n", server.URL())
+		}})
+		if err != nil {
+			return err
+		}
+		return server.Run(context.Background())
 	case "status", "stop":
 		fs := flag.NewFlagSet("runtime "+args[0], flag.ContinueOnError)
 		url := fs.String("url", "", "runtime status URL")

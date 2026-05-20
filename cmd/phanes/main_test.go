@@ -15,8 +15,8 @@ func TestRuntimeStartRejectsUnsafeBind(t *testing.T) {
 
 func TestRuntimeStartValidatesExampleConfig(t *testing.T) {
 	err := run([]string{"runtime", "start", "--config", "../../examples/config/phanes.config.json"})
-	if err == nil || !strings.Contains(err.Error(), "implementation pending") {
-		t.Fatalf("expected validated not implemented error, got %v", err)
+	if err == nil || !strings.Contains(err.Error(), "verify cache before runtime start") {
+		t.Fatalf("expected cache verification error, got %v", err)
 	}
 }
 
