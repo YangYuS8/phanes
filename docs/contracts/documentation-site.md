@@ -24,6 +24,8 @@ npm run build
 
 GitHub Actions builds the Docusaurus site and publishes it with `actions/deploy-pages`.
 
+Repository settings must enable GitHub Pages with **Source: GitHub Actions**. Without this setting, `actions/deploy-pages` fails with a 404 when creating the deployment.
+
 The site is configured for the project Pages path:
 
 ```text

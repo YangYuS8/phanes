@@ -53,6 +53,8 @@ The project is in contract-design phase. Implementation should begin only after 
 
 Project documentation is intended to be managed with Docusaurus and published to GitHub Pages through GitHub Actions. The checked-in contract docs under `docs/` are the source for that site.
 
+Repository setup requirement: enable **Settings → Pages → Source → GitHub Actions** before the `pages` workflow can deploy.
+
 Local docs commands:
 
 ```bash

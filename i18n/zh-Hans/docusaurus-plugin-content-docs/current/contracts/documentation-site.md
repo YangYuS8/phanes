@@ -28,6 +28,8 @@ npm run build:zh
 
 GitHub Actions 使用 `actions/deploy-pages` 构建并发布 Docusaurus 站点。
 
+仓库设置必须启用 GitHub Pages，并将 Source 设为 **GitHub Actions**。否则 `actions/deploy-pages` 创建 deployment 时会以 404 失败。
+
 站点配置为项目 Pages 路径：
 
 ```text

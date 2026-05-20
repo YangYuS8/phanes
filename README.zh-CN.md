@@ -53,6 +53,8 @@ Phanes **不是** Grasscutter fork。Grasscutter、Cultivation 和 GC-Resources 
 
 项目文档使用 Docusaurus 管理，并通过 GitHub Actions 发布到 GitHub Pages。`docs/` 下的英文契约文档是文档站源内容；中文本地化文档位于 `i18n/zh-Hans/docusaurus-plugin-content-docs/current/`。
 
+仓库设置要求：需要先启用 **Settings → Pages → Source → GitHub Actions**，`pages` workflow 才能部署。
+
 本地文档命令：
 
 ```bash
