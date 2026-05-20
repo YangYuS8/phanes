@@ -1,9 +1,16 @@
 package main
 
 import (
+	"context"
 	"path/filepath"
 	"strings"
 	"testing"
+	"time"
+
+	"github.com/YangYuS8/phanes/internal/builder"
+	"github.com/YangYuS8/phanes/internal/config"
+	"github.com/YangYuS8/phanes/internal/contracts"
+	runtimehttp "github.com/YangYuS8/phanes/internal/runtime"
 )
 
 func TestRuntimeStartRejectsUnsafeBind(t *testing.T) {
@@ -47,5 +54,50 @@ func TestCacheCleanRejectsSaveInsideCache(t *testing.T) {
 func TestVersionCommand(t *testing.T) {
 	if err := run([]string{"version"}); err != nil {
 		t.Fatalf("version command: %v", err)
+	}
+}
+
+func TestRuntimeStatusAndStopCommands(t *testing.T) {
+	dir := t.TempDir()
+	cacheDir := filepath.Join(dir, "cache")
+	if _, err := builder.BuildEmbeddedMinimal(cacheDir); err != nil {
+		t.Fatal(err)
+	}
+
+	ready := make(chan *runtimehttp.Server, 1)
+	server, err := runtimehttp.NewServer(config.Config{
+		Runtime: config.RuntimeConfig{BindHost: contracts.DefaultBindHost, HTTPPort: 0},
+		Cache:   config.CacheConfig{Dir: cacheDir},
+		Save:    config.SaveConfig{DBPath: filepath.Join(dir, "save.sqlite")},
+	}, runtimehttp.Options{OnReady: func(server *runtimehttp.Server) { ready <- server }})
+	if err != nil {
+		t.Fatal(err)
+	}
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	errc := make(chan error, 1)
+	go func() { errc <- server.Run(ctx) }()
+
+	var running *runtimehttp.Server
+	select {
+	case running = <-ready:
+	case <-time.After(5 * time.Second):
+		t.Fatal("runtime did not become ready")
+	}
+
+	if err := run([]string{"runtime", "status", "--url", running.URL()}); err != nil {
+		t.Fatalf("runtime status: %v", err)
+	}
+	if err := run([]string{"runtime", "stop", "--url", running.URL()}); err != nil {
+		t.Fatalf("runtime stop: %v", err)
+	}
+
+	select {
+	case err := <-errc:
+		if err != nil {
+			t.Fatalf("runtime returned error: %v", err)
+		}
+	case <-time.After(5 * time.Second):
+		t.Fatal("runtime did not stop")
 	}
 }

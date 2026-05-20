@@ -5,6 +5,8 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"io"
+	"net/http"
 	"os"
 
 	"github.com/YangYuS8/phanes/internal/builder"
@@ -77,7 +79,7 @@ func runtimeCommand(args []string) error {
 			return err
 		}
 		return server.Run(context.Background())
-	case "status", "stop":
+	case "status":
 		fs := flag.NewFlagSet("runtime "+args[0], flag.ContinueOnError)
 		url := fs.String("url", "", "runtime status URL")
 		if err := fs.Parse(args[1:]); err != nil {
@@ -86,10 +88,47 @@ func runtimeCommand(args []string) error {
 		if *url == "" {
 			return errors.New("--url is required")
 		}
-		return notImplemented("runtime " + args[0] + " validated")
+		return runtimeGET(*url, "/v1/status")
+	case "stop":
+		fs := flag.NewFlagSet("runtime stop", flag.ContinueOnError)
+		url := fs.String("url", "", "runtime status URL")
+		if err := fs.Parse(args[1:]); err != nil {
+			return err
+		}
+		if *url == "" {
+			return errors.New("--url is required")
+		}
+		return runtimePOST(*url, "/v1/runtime/shutdown")
 	default:
 		return fmt.Errorf("unknown runtime subcommand %q", args[0])
 	}
+}
+
+func runtimeGET(baseURL string, path string) error {
+	resp, err := http.Get(baseURL + path)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	return copyResponse(resp)
+}
+
+func runtimePOST(baseURL string, path string) error {
+	resp, err := http.Post(baseURL+path, "application/json", nil)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	return copyResponse(resp)
+}
+
+func copyResponse(resp *http.Response) error {
+	_, _ = io.Copy(os.Stdout, resp.Body)
+	_, _ = fmt.Fprintln(os.Stdout)
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return fmt.Errorf("runtime API returned HTTP %d", resp.StatusCode)
+	}
+	return nil
 }
 
 func builderCommand(args []string) error {
