@@ -1,43 +1,39 @@
 {
-  "cache_id": "embedded-minimal-v1",
-  "schema_version": {
-    "major": 0,
-    "minor": 1,
-    "patch": 0,
-    "prerelease": "contract-fixture"
+  "cacheId":  "embedded-minimal-v1",
+  "schemaVersion":  {
+    "minor":  1,
+    "prerelease":  "contract-fixture"
   },
-  "game_region": "fixture",
-  "game_version": "fixture",
-  "sources": [
+  "gameRegion":  "fixture",
+  "gameVersion":  "fixture",
+  "sources":  [
     {
-      "source_id": "embedded-minimal",
-      "kind": "SOURCE_KIND_EMBEDDED_MINIMAL",
-      "display_name": "Embedded minimal contract fixture",
-      "local_path": "",
-      "digest": {
-        "algorithm": "sha256",
-        "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+      "sourceId":  "embedded-minimal",
+      "kind":  "SOURCE_KIND_EMBEDDED_MINIMAL",
+      "displayName":  "Embedded minimal contract fixture",
+      "digest":  {
+        "algorithm":  "sha256",
+        "hex":  "8a51f00f099b6b9bfd3168dce8684397d12ecd445dc484daa698a164ad296f16"
       }
     }
   ],
-  "artifacts": [
+  "artifacts":  [
     {
-      "artifact_id": "cache-sqlite",
-      "kind": "ARTIFACT_KIND_SQLITE_DB",
-      "relative_path": "cache.sqlite",
-      "size_bytes": 0,
-      "digest": {
-        "algorithm": "sha256",
-        "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+      "artifactId":  "cache-sqlite",
+      "kind":  "ARTIFACT_KIND_SQLITE_DB",
+      "relativePath":  "cache.sqlite",
+      "sizeBytes":  "45056",
+      "digest":  {
+        "algorithm":  "sha256",
+        "hex":  "dab4e3087f8704446fc528dbc97145443d031a5a1c341b74def6eb491ec8c792"
       }
     }
   ],
-  "indexes": [
+  "indexes":  [
     {
-      "name": "resource_index",
-      "version": "0.1.0",
-      "record_count": 0
+      "name":  "resource_index",
+      "version":  "0.1.0"
     }
   ],
-  "created_at": "1970-01-01T00:00:00Z"
+  "createdAt":  "1970-01-01T00:00:00Z"
 }

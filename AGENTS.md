@@ -263,7 +263,7 @@ Docs:
   Markdown
 
 Collaboration:
-  GitLab issues/MRs through glab
+  GitHub issues/PRs through gh
 ```
 
 opencode may propose better choices when justified.
@@ -274,11 +274,11 @@ opencode may propose better choices when justified.
 
 The local environment has useful tools available.
 
-### 8.1 glab
+### 8.1 gh
 
-`glab` is installed.
+`gh` is installed.
 
-Use GitLab as the shared coordination surface when useful.
+Use GitHub as the shared coordination surface when useful.
 
 Recommended use:
 
@@ -290,37 +290,37 @@ Issues:
   design question
   review request
 
-Merge Requests:
+Pull Requests:
   implementation changes
   documentation changes
   schema/proto changes
 
-Issue/MR comments:
+Issue/PR comments:
   progress updates
   review feedback
   handoff notes
 ```
 
-Before scripting glab commands, check local help because flags may differ by version:
+Before scripting gh commands, check local help because flags may differ by version:
 
 ```bash
-glab --help
-glab issue --help
-glab mr --help
+gh --help
+gh issue --help
+gh pr --help
 ```
 
 Good patterns:
 
 ```bash
-glab issue list
-glab issue create
-glab issue note <id>
-glab mr list
-glab mr create
-glab mr note <id>
+gh issue list
+gh issue create
+gh issue comment <id>
+gh pr list
+gh pr create
+gh pr comment <id>
 ```
 
-Use concise GitLab comments for handoffs:
+Use concise GitHub comments for handoffs:
 
 ```markdown
 ## Handoff
@@ -383,7 +383,7 @@ search references
 draft contracts
 generate protobufs
 coordinate implementation
-create GitLab issues/MRs
+create GitHub issues/PRs
 run tests
 review changes
 ```
@@ -474,8 +474,8 @@ Tauri:
 SQLite:
   https://www.sqlite.org/
 
-GitLab CLI:
-  https://gitlab.com/gitlab-org/cli
+GitHub CLI:
+  https://cli.github.com/
 ```
 
 ---
@@ -576,7 +576,7 @@ Storage preference: SQLite
 Launcher preference: Tauri 2
 Resource strategy: local cache, no GC-Resources dependency
 Default runtime binding: 127.0.0.1
-Coordination: opencode + oh-my-opencode-slim + glab
+Coordination: opencode + oh-my-opencode-slim + gh
 Output reduction tool: rtk when useful
 Planning/design: delegated to opencode agents
 AGENTS.md purpose: context and boundaries only
@@ -616,7 +616,7 @@ protobuf
 SQLite
 Tauri
 local resource cache
-glab for GitLab coordination
+gh for GitHub coordination
 rtk for compact command output
 opencode/oh-my-opencode-slim for planning and task execution
 ```

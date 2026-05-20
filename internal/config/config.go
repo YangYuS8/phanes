@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"gitlab.com/Geneden/phanes/internal/contracts"
+	"github.com/YangYuS8/phanes/internal/contracts"
 )
 
 type Config struct {

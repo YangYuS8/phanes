@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"gitlab.com/Geneden/phanes/internal/contracts"
+	"github.com/YangYuS8/phanes/internal/contracts"
 )
 
 func TestLoadExampleConfig(t *testing.T) {

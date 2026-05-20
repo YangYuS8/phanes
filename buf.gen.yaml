@@ -4,7 +4,7 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: gitlab.com/Geneden/phanes/gen/go
+      value: github.com/YangYuS8/phanes/gen/go
 plugins:
   - remote: buf.build/protocolbuffers/go
     out: gen/go

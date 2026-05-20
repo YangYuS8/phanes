@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"os"
 
-	"gitlab.com/Geneden/phanes/internal/config"
-	"gitlab.com/Geneden/phanes/internal/contracts"
+	"github.com/YangYuS8/phanes/internal/builder"
+	"github.com/YangYuS8/phanes/internal/config"
+	"github.com/YangYuS8/phanes/internal/contracts"
 )
 
 var (
@@ -91,20 +92,41 @@ func builderCommand(args []string) error {
 	case "verify":
 		fs := flag.NewFlagSet("builder verify", flag.ContinueOnError)
 		cacheDir := fs.String("cache-dir", "", "cache directory")
-		_ = fs.Bool("deep", false, "deep hash check")
+		deep := fs.Bool("deep", false, "deep hash check")
 		if err := fs.Parse(args[1:]); err != nil {
 			return err
 		}
 		if *cacheDir == "" {
 			return errors.New("--cache-dir is required")
 		}
-		if err := contracts.ValidateCacheRoot(*cacheDir); err != nil {
+		verification, err := contracts.VerifyCacheRoot(*cacheDir, contracts.CacheVerifyOptions{DeepHashCheck: *deep})
+		if err != nil {
 			return err
 		}
-		fmt.Println("cache verification passed")
+		fmt.Printf("cache verification passed: %s\n", verification.Manifest.GetCacheId())
 		return nil
-	case "detect", "build":
-		return notImplemented("builder " + args[0] + " command is declared but not implemented")
+	case "build":
+		fs := flag.NewFlagSet("builder build", flag.ContinueOnError)
+		output := fs.String("output", "", "output cache directory")
+		mode := fs.String("mode", "", "build mode")
+		_ = fs.String("input", "", "local input path")
+		if err := fs.Parse(args[1:]); err != nil {
+			return err
+		}
+		if *output == "" {
+			return errors.New("--output is required")
+		}
+		if *mode != "embedded-minimal" {
+			return notImplemented("builder build currently supports only --mode embedded-minimal")
+		}
+		manifest, err := builder.BuildEmbeddedMinimal(*output)
+		if err != nil {
+			return err
+		}
+		fmt.Printf("embedded-minimal cache built: %s\n", manifest.GetCacheId())
+		return nil
+	case "detect":
+		return notImplemented("builder detect command is declared but not implemented")
 	default:
 		return fmt.Errorf("unknown builder subcommand %q", args[0])
 	}

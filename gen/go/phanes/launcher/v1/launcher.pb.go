@@ -7,8 +7,8 @@
 package launcherv1
 
 import (
-	v11 "gitlab.com/Geneden/phanes/gen/go/phanes/common/v1"
-	v1 "gitlab.com/Geneden/phanes/gen/go/phanes/runtime/v1"
+	v11 "github.com/YangYuS8/phanes/gen/go/phanes/common/v1"
+	v1 "github.com/YangYuS8/phanes/gen/go/phanes/runtime/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -410,8 +410,8 @@ const file_phanes_launcher_v1_launcher_proto_rawDesc = "" +
 	"\x16PROCESS_STATE_STARTING\x10\x02\x12\x19\n" +
 	"\x15PROCESS_STATE_RUNNING\x10\x03\x12\x18\n" +
 	"\x14PROCESS_STATE_EXITED\x10\x04\x12\x18\n" +
-	"\x14PROCESS_STATE_FAILED\x10\x05B\xd1\x01\n" +
-	"\x16com.phanes.launcher.v1B\rLauncherProtoP\x01Z>gitlab.com/Geneden/phanes/gen/go/phanes/launcher/v1;launcherv1\xa2\x02\x03PLX\xaa\x02\x12Phanes.Launcher.V1\xca\x02\x12Phanes\\Launcher\\V1\xe2\x02\x1ePhanes\\Launcher\\V1\\GPBMetadata\xea\x02\x14Phanes::Launcher::V1b\x06proto3"
+	"\x14PROCESS_STATE_FAILED\x10\x05B\xd2\x01\n" +
+	"\x16com.phanes.launcher.v1B\rLauncherProtoP\x01Z?github.com/YangYuS8/phanes/gen/go/phanes/launcher/v1;launcherv1\xa2\x02\x03PLX\xaa\x02\x12Phanes.Launcher.V1\xca\x02\x12Phanes\\Launcher\\V1\xe2\x02\x1ePhanes\\Launcher\\V1\\GPBMetadata\xea\x02\x14Phanes::Launcher::V1b\x06proto3"
 
 var (
 	file_phanes_launcher_v1_launcher_proto_rawDescOnce sync.Once

@@ -4,11 +4,11 @@ const config = {
   tagline: 'Local-first offline runtime, resource-cache builder, and launcher framework',
   favicon: 'img/favicon.svg',
 
-  url: 'https://geneden.gitlab.io',
+  url: 'https://yangyus8.github.io',
   baseUrl: '/phanes/',
   trailingSlash: false,
 
-  organizationName: 'Geneden',
+  organizationName: 'YangYuS8',
   projectName: 'phanes',
 
   onBrokenLinks: 'throw',
@@ -38,7 +38,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
-          editUrl: 'https://gitlab.com/Geneden/phanes/-/edit/main/',
+          editUrl: 'https://github.com/YangYuS8/phanes/edit/main/',
         },
         blog: false,
         theme: {
@@ -62,8 +62,8 @@ const config = {
           position: 'right',
         },
         {
-          href: 'https://gitlab.com/Geneden/phanes',
-          label: 'GitLab',
+          href: 'https://github.com/YangYuS8/phanes',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -81,8 +81,8 @@ const config = {
         {
           title: 'Project',
           items: [
-            { label: 'GitLab', href: 'https://gitlab.com/Geneden/phanes' },
-            { label: 'License', href: 'https://gitlab.com/Geneden/phanes/-/blob/main/LICENSE' },
+            { label: 'GitHub', href: 'https://github.com/YangYuS8/phanes' },
+            { label: 'License', href: 'https://github.com/YangYuS8/phanes/blob/main/LICENSE' },
           ],
         },
       ],

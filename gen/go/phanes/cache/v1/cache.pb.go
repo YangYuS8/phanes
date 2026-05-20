@@ -7,7 +7,7 @@
 package cachev1
 
 import (
-	v1 "gitlab.com/Geneden/phanes/gen/go/phanes/common/v1"
+	v1 "github.com/YangYuS8/phanes/gen/go/phanes/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -493,9 +493,9 @@ const file_phanes_cache_v1_cache_proto_rawDesc = "" +
 	"\x17ARTIFACT_KIND_SQLITE_DB\x10\x01\x12\x1b\n" +
 	"\x17ARTIFACT_KIND_BLOB_PACK\x10\x02\x12\x1a\n" +
 	"\x16ARTIFACT_KIND_MANIFEST\x10\x03\x12\x17\n" +
-	"\x13ARTIFACT_KIND_INDEX\x10\x04B\xb9\x01\n" +
+	"\x13ARTIFACT_KIND_INDEX\x10\x04B\xba\x01\n" +
 	"\x13com.phanes.cache.v1B\n" +
-	"CacheProtoP\x01Z8gitlab.com/Geneden/phanes/gen/go/phanes/cache/v1;cachev1\xa2\x02\x03PCX\xaa\x02\x0fPhanes.Cache.V1\xca\x02\x0fPhanes\\Cache\\V1\xe2\x02\x1bPhanes\\Cache\\V1\\GPBMetadata\xea\x02\x11Phanes::Cache::V1b\x06proto3"
+	"CacheProtoP\x01Z9github.com/YangYuS8/phanes/gen/go/phanes/cache/v1;cachev1\xa2\x02\x03PCX\xaa\x02\x0fPhanes.Cache.V1\xca\x02\x0fPhanes\\Cache\\V1\xe2\x02\x1bPhanes\\Cache\\V1\\GPBMetadata\xea\x02\x11Phanes::Cache::V1b\x06proto3"
 
 var (
 	file_phanes_cache_v1_cache_proto_rawDescOnce sync.Once

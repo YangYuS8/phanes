@@ -7,7 +7,7 @@
 package runtimev1
 
 import (
-	v1 "gitlab.com/Geneden/phanes/gen/go/phanes/common/v1"
+	v1 "github.com/YangYuS8/phanes/gen/go/phanes/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -741,8 +741,8 @@ const file_phanes_runtime_v1_runtime_proto_rawDesc = "" +
 	"\x16RUNTIME_STATE_DEGRADED\x10\x03\x12\x1a\n" +
 	"\x16RUNTIME_STATE_STOPPING\x10\x04\x12\x19\n" +
 	"\x15RUNTIME_STATE_STOPPED\x10\x05\x12\x18\n" +
-	"\x14RUNTIME_STATE_FAILED\x10\x06B\xc9\x01\n" +
-	"\x15com.phanes.runtime.v1B\fRuntimeProtoP\x01Z<gitlab.com/Geneden/phanes/gen/go/phanes/runtime/v1;runtimev1\xa2\x02\x03PRX\xaa\x02\x11Phanes.Runtime.V1\xca\x02\x11Phanes\\Runtime\\V1\xe2\x02\x1dPhanes\\Runtime\\V1\\GPBMetadata\xea\x02\x13Phanes::Runtime::V1b\x06proto3"
+	"\x14RUNTIME_STATE_FAILED\x10\x06B\xca\x01\n" +
+	"\x15com.phanes.runtime.v1B\fRuntimeProtoP\x01Z=github.com/YangYuS8/phanes/gen/go/phanes/runtime/v1;runtimev1\xa2\x02\x03PRX\xaa\x02\x11Phanes.Runtime.V1\xca\x02\x11Phanes\\Runtime\\V1\xe2\x02\x1dPhanes\\Runtime\\V1\\GPBMetadata\xea\x02\x13Phanes::Runtime::V1b\x06proto3"
 
 var (
 	file_phanes_runtime_v1_runtime_proto_rawDescOnce sync.Once

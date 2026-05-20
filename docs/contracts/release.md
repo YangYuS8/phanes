@@ -1,6 +1,6 @@
 # Release Contract
 
-Phanes releases are produced by GitLab CI/CD from Git tags.
+Phanes releases are produced by GitHub Actions from Git tags.
 
 ## Primary platform
 
@@ -13,11 +13,13 @@ Other platforms may be added later, but Windows artifacts are the primary releas
 
 ## Tag pipeline
 
-Release jobs run only for tag pipelines:
+Release jobs run only for tag pushes:
 
 ```text
-rules:
-  - if: $CI_COMMIT_TAG
+on:
+  push:
+    tags:
+      - 'v*'
 ```
 
 ## Artifacts
@@ -38,9 +40,9 @@ The archives include:
 - `README.md`
 - `README.zh-CN.md`
 
-## GitLab Release
+## GitHub Release
 
-The `release:create` job uses the GitLab release keyword with the official `registry.gitlab.com/gitlab-org/cli:latest` image. Release asset links point to packaged job artifacts.
+The `create-release` job uses `gh release create` with the workflow `GITHUB_TOKEN`. Release assets include the Windows archives and `SHA256SUMS.txt`.
 
 ## Validation expectations
 

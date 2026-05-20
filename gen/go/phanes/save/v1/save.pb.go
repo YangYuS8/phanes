@@ -176,8 +176,8 @@ const file_phanes_save_v1_save_proto_rawDesc = "" +
 	"\n" +
 	"profile_id\x18\x02 \x01(\tR\tprofileId\x12%\n" +
 	"\x0eschema_version\x18\x03 \x01(\rR\rschemaVersion\x12@\n" +
-	"\x0elast_played_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\flastPlayedAtB\xb1\x01\n" +
-	"\x12com.phanes.save.v1B\tSaveProtoP\x01Z6gitlab.com/Geneden/phanes/gen/go/phanes/save/v1;savev1\xa2\x02\x03PSX\xaa\x02\x0ePhanes.Save.V1\xca\x02\x0ePhanes\\Save\\V1\xe2\x02\x1aPhanes\\Save\\V1\\GPBMetadata\xea\x02\x10Phanes::Save::V1b\x06proto3"
+	"\x0elast_played_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\flastPlayedAtB\xb2\x01\n" +
+	"\x12com.phanes.save.v1B\tSaveProtoP\x01Z7github.com/YangYuS8/phanes/gen/go/phanes/save/v1;savev1\xa2\x02\x03PSX\xaa\x02\x0ePhanes.Save.V1\xca\x02\x0ePhanes\\Save\\V1\xe2\x02\x1aPhanes\\Save\\V1\\GPBMetadata\xea\x02\x10Phanes::Save::V1b\x06proto3"
 
 var (
 	file_phanes_save_v1_save_proto_rawDescOnce sync.Once

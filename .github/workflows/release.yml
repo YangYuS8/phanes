@@ -1,0 +1,57 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goarch:
+          - amd64
+          - arm64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Build Windows binary
+        env:
+          CGO_ENABLED: 0
+          GOOS: windows
+          GOARCH: ${{ matrix.goarch }}
+        run: |
+          mkdir -p dist package
+          exe="phanes-windows-${GOARCH}.exe"
+          go build -trimpath -ldflags="-s -w -X main.version=${GITHUB_REF_NAME} -X main.commit=${GITHUB_SHA}" -o "dist/${exe}" ./cmd/phanes
+          cp LICENSE NOTICE README.md README.zh-CN.md package/
+          cp "dist/${exe}" package/
+          (cd package && zip -r "../dist/phanes-windows-${GOARCH}.zip" .)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phanes-windows-${{ matrix.goarch }}
+          path: dist/phanes-windows-${{ matrix.goarch }}.zip
+
+  create-release:
+    needs: build-windows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: release
+          merge-multiple: true
+      - name: Generate checksums
+        run: |
+          cd release
+          sha256sum *.zip > SHA256SUMS.txt
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${GITHUB_REF_NAME}" release/*.zip release/SHA256SUMS.txt --generate-notes

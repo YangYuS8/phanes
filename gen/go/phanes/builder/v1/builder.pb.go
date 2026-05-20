@@ -7,8 +7,8 @@
 package builderv1
 
 import (
-	v1 "gitlab.com/Geneden/phanes/gen/go/phanes/cache/v1"
-	v11 "gitlab.com/Geneden/phanes/gen/go/phanes/common/v1"
+	v1 "github.com/YangYuS8/phanes/gen/go/phanes/cache/v1"
+	v11 "github.com/YangYuS8/phanes/gen/go/phanes/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -479,8 +479,8 @@ const file_phanes_builder_v1_builder_proto_rawDesc = "" +
 	"\x16BUILD_MODE_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bBUILD_MODE_EMBEDDED_MINIMAL\x10\x01\x12\x1a\n" +
 	"\x16BUILD_MODE_LOCAL_CACHE\x10\x02\x12\x1a\n" +
-	"\x16BUILD_MODE_VERIFY_ONLY\x10\x03B\xc9\x01\n" +
-	"\x15com.phanes.builder.v1B\fBuilderProtoP\x01Z<gitlab.com/Geneden/phanes/gen/go/phanes/builder/v1;builderv1\xa2\x02\x03PBX\xaa\x02\x11Phanes.Builder.V1\xca\x02\x11Phanes\\Builder\\V1\xe2\x02\x1dPhanes\\Builder\\V1\\GPBMetadata\xea\x02\x13Phanes::Builder::V1b\x06proto3"
+	"\x16BUILD_MODE_VERIFY_ONLY\x10\x03B\xca\x01\n" +
+	"\x15com.phanes.builder.v1B\fBuilderProtoP\x01Z=github.com/YangYuS8/phanes/gen/go/phanes/builder/v1;builderv1\xa2\x02\x03PBX\xaa\x02\x11Phanes.Builder.V1\xca\x02\x11Phanes\\Builder\\V1\xe2\x02\x1dPhanes\\Builder\\V1\\GPBMetadata\xea\x02\x13Phanes::Builder::V1b\x06proto3"
 
 var (
 	file_phanes_builder_v1_builder_proto_rawDescOnce sync.Once

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -20,9 +21,19 @@ func TestRuntimeStartValidatesExampleConfig(t *testing.T) {
 }
 
 func TestBuilderVerifyFixture(t *testing.T) {
-	err := run([]string{"builder", "verify", "--cache-dir", "../../examples/cache/embedded-minimal"})
+	err := run([]string{"builder", "verify", "--cache-dir", "../../examples/cache/embedded-minimal", "--deep"})
 	if err != nil {
 		t.Fatalf("builder verify fixture: %v", err)
+	}
+}
+
+func TestBuilderBuildEmbeddedMinimal(t *testing.T) {
+	output := filepath.Join(t.TempDir(), "cache")
+	if err := run([]string{"builder", "build", "--mode", "embedded-minimal", "--output", output}); err != nil {
+		t.Fatalf("builder build embedded-minimal: %v", err)
+	}
+	if err := run([]string{"builder", "verify", "--cache-dir", output, "--deep"}); err != nil {
+		t.Fatalf("builder verify generated embedded-minimal: %v", err)
 	}
 }
 

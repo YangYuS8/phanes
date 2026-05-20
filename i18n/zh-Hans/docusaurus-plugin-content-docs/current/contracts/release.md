@@ -1,6 +1,6 @@
 # 发布契约
 
-Phanes release 由 GitLab CI/CD 从 Git tag 生成。
+Phanes release 由 GitHub Actions 从 Git tag 生成。
 
 ## 主要平台
 
@@ -13,11 +13,13 @@ Phanes release 由 GitLab CI/CD 从 Git tag 生成。
 
 ## Tag pipeline
 
-Release job 只在 tag pipeline 运行：
+Release job 只在 tag push 运行：
 
 ```text
-rules:
-  - if: $CI_COMMIT_TAG
+on:
+  push:
+    tags:
+      - 'v*'
 ```
 
 ## Artifacts
@@ -38,9 +40,9 @@ release/SHA256SUMS.txt
 - `README.md`
 - `README.zh-CN.md`
 
-## GitLab Release
+## GitHub Release
 
-`release:create` job 使用 GitLab `release` keyword 和官方 `registry.gitlab.com/gitlab-org/cli:latest` image。Release asset links 指向打包后的 job artifacts。
+`create-release` job 使用 `gh release create` 和 workflow `GITHUB_TOKEN`。Release assets 包含 Windows archives 和 `SHA256SUMS.txt`。
 
 ## 验证期望
 

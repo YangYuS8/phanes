@@ -51,7 +51,7 @@ The project is in contract-design phase. Implementation should begin only after 
 
 ## Documentation site
 
-Project documentation is intended to be managed with Docusaurus and published to GitLab Pages through GitLab CI/CD. The checked-in contract docs under `docs/` are the source for that site.
+Project documentation is intended to be managed with Docusaurus and published to GitHub Pages through GitHub Actions. The checked-in contract docs under `docs/` are the source for that site.
 
 Local docs commands:
 
@@ -67,7 +67,7 @@ The Docusaurus site provides English and Simplified Chinese documentation. Engli
 
 ## Releases
 
-Tagged GitLab CI/CD pipelines build Windows-focused release artifacts for `windows/amd64` and `windows/arm64`, package them as `.zip` files, generate `SHA256SUMS.txt`, and create a GitLab Release.
+Tagged GitHub Actions release workflows build Windows-focused release artifacts for `windows/amd64` and `windows/arm64`, package them as `.zip` files, generate `SHA256SUMS.txt`, and create a GitHub Release.
 
 ## License
 

@@ -336,8 +336,8 @@ const file_phanes_common_v1_common_proto_rawDesc = "" +
 	"\rSEVERITY_INFO\x10\x01\x12\x14\n" +
 	"\x10SEVERITY_WARNING\x10\x02\x12\x12\n" +
 	"\x0eSEVERITY_ERROR\x10\x03\x12\x12\n" +
-	"\x0eSEVERITY_FATAL\x10\x04B\xc1\x01\n" +
-	"\x14com.phanes.common.v1B\vCommonProtoP\x01Z:gitlab.com/Geneden/phanes/gen/go/phanes/common/v1;commonv1\xa2\x02\x03PCX\xaa\x02\x10Phanes.Common.V1\xca\x02\x10Phanes\\Common\\V1\xe2\x02\x1cPhanes\\Common\\V1\\GPBMetadata\xea\x02\x12Phanes::Common::V1b\x06proto3"
+	"\x0eSEVERITY_FATAL\x10\x04B\xc2\x01\n" +
+	"\x14com.phanes.common.v1B\vCommonProtoP\x01Z;github.com/YangYuS8/phanes/gen/go/phanes/common/v1;commonv1\xa2\x02\x03PCX\xaa\x02\x10Phanes.Common.V1\xca\x02\x10Phanes\\Common\\V1\xe2\x02\x1cPhanes\\Common\\V1\\GPBMetadata\xea\x02\x12Phanes::Common::V1b\x06proto3"
 
 var (
 	file_phanes_common_v1_common_proto_rawDescOnce sync.Once

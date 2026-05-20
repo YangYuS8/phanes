@@ -51,7 +51,7 @@ Phanes **不是** Grasscutter fork。Grasscutter、Cultivation 和 GC-Resources 
 
 ## 文档站
 
-项目文档使用 Docusaurus 管理，并通过 GitLab CI/CD 发布到 GitLab Pages。`docs/` 下的英文契约文档是文档站源内容；中文本地化文档位于 `i18n/zh-Hans/docusaurus-plugin-content-docs/current/`。
+项目文档使用 Docusaurus 管理，并通过 GitHub Actions 发布到 GitHub Pages。`docs/` 下的英文契约文档是文档站源内容；中文本地化文档位于 `i18n/zh-Hans/docusaurus-plugin-content-docs/current/`。
 
 本地文档命令：
 
@@ -65,7 +65,7 @@ npm run build:zh
 
 ## 发布
 
-带 tag 的 GitLab CI/CD pipeline 会优先构建 Windows 发布产物，包括 `windows/amd64` 和 `windows/arm64`，打包为 `.zip`，生成 `SHA256SUMS.txt`，并创建 GitLab Release。
+带 tag 的 GitHub Actions release workflow 会优先构建 Windows 发布产物，包括 `windows/amd64` 和 `windows/arm64`，打包为 `.zip`，生成 `SHA256SUMS.txt`，并创建 GitHub Release。
 
 ## 许可证
 

@@ -1,6 +1,6 @@
 # Documentation Site Contract
 
-Phanes documentation is managed as repository Markdown and published as a Docusaurus site through GitLab Pages.
+Phanes documentation is managed as repository Markdown and published as a Docusaurus site through GitHub Pages.
 
 ## Source of truth
 
@@ -18,11 +18,11 @@ npm run start
 npm run build
 ```
 
-`npm run build` must succeed before GitLab Pages deployment.
+`npm run build` must succeed before GitHub Pages deployment.
 
-## GitLab Pages
+## GitHub Pages
 
-GitLab CI/CD builds the Docusaurus site and publishes it with the `pages` job.
+GitHub Actions builds the Docusaurus site and publishes it with `actions/deploy-pages`.
 
 The site is configured for the project Pages path:
 
@@ -30,7 +30,7 @@ The site is configured for the project Pages path:
 baseUrl: /phanes/
 ```
 
-If the GitLab Pages URL or project path changes, update `docusaurus.config.js` and validate links with `npm run build`.
+If the GitHub Pages URL or project path changes, update `docusaurus.config.js` and validate links with `npm run build`.
 
 ## Content boundaries
 

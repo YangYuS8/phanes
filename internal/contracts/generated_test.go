@@ -3,12 +3,12 @@ package contracts_test
 import (
 	"testing"
 
-	builderv1 "gitlab.com/Geneden/phanes/gen/go/phanes/builder/v1"
-	cachev1 "gitlab.com/Geneden/phanes/gen/go/phanes/cache/v1"
-	commonv1 "gitlab.com/Geneden/phanes/gen/go/phanes/common/v1"
-	launcherv1 "gitlab.com/Geneden/phanes/gen/go/phanes/launcher/v1"
-	runtimev1 "gitlab.com/Geneden/phanes/gen/go/phanes/runtime/v1"
-	savev1 "gitlab.com/Geneden/phanes/gen/go/phanes/save/v1"
+	builderv1 "github.com/YangYuS8/phanes/gen/go/phanes/builder/v1"
+	cachev1 "github.com/YangYuS8/phanes/gen/go/phanes/cache/v1"
+	commonv1 "github.com/YangYuS8/phanes/gen/go/phanes/common/v1"
+	launcherv1 "github.com/YangYuS8/phanes/gen/go/phanes/launcher/v1"
+	runtimev1 "github.com/YangYuS8/phanes/gen/go/phanes/runtime/v1"
+	savev1 "github.com/YangYuS8/phanes/gen/go/phanes/save/v1"
 )
 
 func TestGeneratedContractsCompile(t *testing.T) {

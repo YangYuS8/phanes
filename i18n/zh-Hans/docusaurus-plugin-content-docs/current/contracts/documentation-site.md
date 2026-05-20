@@ -1,6 +1,6 @@
 # 文档站契约
 
-Phanes 文档以仓库 Markdown 管理，并通过 Docusaurus 发布到 GitLab Pages。
+Phanes 文档以仓库 Markdown 管理，并通过 Docusaurus 发布到 GitHub Pages。
 
 ## Source of truth
 
@@ -22,11 +22,11 @@ npm run build:en
 npm run build:zh
 ```
 
-`npm run build` 必须在 GitLab Pages 部署前通过。
+`npm run build` 必须在 GitHub Pages 部署前通过。
 
-## GitLab Pages
+## GitHub Pages
 
-GitLab CI/CD 使用 `pages` job 构建并发布 Docusaurus 站点。
+GitHub Actions 使用 `actions/deploy-pages` 构建并发布 Docusaurus 站点。
 
 站点配置为项目 Pages 路径：
 
@@ -34,7 +34,7 @@ GitLab CI/CD 使用 `pages` job 构建并发布 Docusaurus 站点。
 baseUrl: /phanes/
 ```
 
-如 GitLab Pages URL 或项目路径变化，需要更新 `docusaurus.config.js` 并运行 `npm run build` 验证链接。
+如 GitHub Pages URL 或项目路径变化，需要更新 `docusaurus.config.js` 并运行 `npm run build` 验证链接。
 
 ## 内容边界
 
